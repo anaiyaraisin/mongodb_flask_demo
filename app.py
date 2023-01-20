@@ -3,15 +3,20 @@ import pymongo
 from pymongo import MongoClient
 import json
 from bson import json_util
+import dotenv
+from dotenv import load_dotenv
+import os
 
 
 #connect to your database environment variable for your connect
-connect = MongoClient("mongodb+srv://raisinghani:hello123@datafederationdemo.qqa6o9q.mongodb.net/?retryWrites=true&w=majority")
+load_dotenv()
+mongo_uri = os.environ.get('MONGO_URI')
+connect = MongoClient(mongo_uri)
 
 #add in your database and collection from Atlas
 database = connect["bookshelf"]
 collection = database["books"]
- 
+
 #instantiating new object with "name"
 app = Flask(__name__)
 
