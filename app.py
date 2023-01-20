@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,jsonify
 import pymongo
 from pymongo import MongoClient
 import json
@@ -52,6 +52,7 @@ def viewbook():
         print(titles)
 
         return titles 
+
 
 
 
