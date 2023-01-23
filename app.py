@@ -53,11 +53,11 @@ def viewbook():
             book = books['book']
             pages = books['pages']
             shelf = {'book': book, 'pages': pages}
-            titles.append(shelf)
+            #books will go to the top of the list
+            titles.insert(0,shelf)
         print(titles)
 
         return titles 
-
 
 
 
